@@ -1,4 +1,6 @@
 import styles from "./City.module.css";
+import BackButton from "./BackButton";
+import { useParams } from "react-router-dom";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -9,6 +11,8 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function City() {
+  const { id } = useParams();
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -52,7 +56,7 @@ function City() {
       </div>
 
       <div>
-        <ButtonBack />
+        <BackButton />
       </div>
     </div>
   );
